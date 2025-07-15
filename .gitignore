@@ -23,6 +23,6 @@ checkpoint/
 flagged/
 gradio_cached_examples/
 .gradio/
-
+upload_model.py
 
 token.txt
