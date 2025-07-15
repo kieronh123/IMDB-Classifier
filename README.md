@@ -1,31 +1,79 @@
-# 🎬 IMDB Sentiment Classifier (Hugging Face + RTX 4080)
+# 🎬 IMDB Sentiment Classifier (DistilBERT)
 
-This project fine-tunes a [DistilBERT](https://huggingface.co/distilbert-base-uncased) model on the IMDB movie review dataset using Hugging Face Transformers and runs with GPU acceleration.
+A fine-tuned [DistilBERT](https://huggingface.co/distilbert-base-uncased) model trained on the IMDB movie review dataset for binary sentiment classification.
 
 ---
 
-## 📦 Setup
+## 📸 Screenshots
 
-```powershell
-# Clone the repo
-git clone https://github.com/YOUR_USERNAME/hf-imdb-sentiment-classifier.git
-cd hf-imdb-sentiment-classifier
+### 🧪 Gradio Web App
 
-# Create and activate a virtual environment (Windows / PowerShell)
-python -m venv .venv
-.venv\Scripts\Activate
-## ⚙️ PyTorch Installation (Required)
+![Gradio UI Screenshot](assets/gradio_screenshot.png)
 
-This project uses PyTorch, but it is **not included in `requirements.txt`** because the install differs by system.
+---
 
-Please install the correct version for your system using the official PyTorch site:
+## 📊 Metrics & Performance
 
-👉 https://pytorch.org/get-started/locally/
+| Metric        | Value        |
+|---------------|--------------|
+| Validation Accuracy (Epoch 1) | 0.84 |
+| Validation Accuracy (Epoch 2) | 0.88 |
+| Training Time  | ~3 minutes (RTX 4080 GPU) |
+| Dataset Size   | 2000 training / 500 test samples |
 
-For most users (Windows + NVIDIA GPU):
+### 📈 Accuracy Over Epochs
 
-```powershell
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+![Accuracy Plot](assets/accuracy_plot.png)
 
-# Install dependencies
-pip install -r requirements.txt
+---
+
+## ✨ Sample Predictions
+
+| Review Text                                  | Predicted Label | Confidence |
+|----------------------------------------------|------------------|------------|
+| "Absolutely loved this movie!"               | POSITIVE         | 0.98       |
+| "Terrible acting and a boring plot."         | NEGATIVE         | 0.96       |
+| "It was okay, not the best I've seen."       | POSITIVE         | 0.67       |
+
+---
+
+## 🚀 Usage
+
+### 🔧 Local Inference
+
+```python
+from transformers import pipeline
+
+classifier = pipeline("sentiment-analysis", model="./exported_model")
+print(classifier("This film was unexpectedly great!"))
+```
+
+### 🌐 Gradio App
+
+```bash
+python app.py
+```
+
+Runs an interactive browser-based sentiment classifier.
+
+---
+
+## 🧠 Model Details
+
+- **Base Model**: distilbert-base-uncased
+- **Fine-tuned On**: IMDB movie reviews (subset of 2,000 train + 500 test)
+- **Trained Using**: Hugging Face Transformers, PyTorch
+- **Hardware**: RTX 4080 Laptop GPU
+- **Training Time**: ~3 minutes
+
+---
+
+## 📦 Exported Model
+
+Weights and tokenizer saved in `exported_model/` directory. You can also upload this to the [Hugging Face Hub](https://huggingface.co/) for cloud deployment.
+
+---
+
+## 📄 License
+
+MIT License
