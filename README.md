@@ -8,7 +8,6 @@ https://huggingface.co/khushon123/imdb-sentiment-model
 
 ---
 
-## Screenshots
 
 ### Gradio Web App
 https://huggingface.co/spaces/Khushon123/imdb-sentiment-app
