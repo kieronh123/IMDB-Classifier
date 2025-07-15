@@ -3,7 +3,9 @@ from datasets import load_dataset         # For loading the IMDB dataset
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, TrainingArguments, Trainer
 import evaluate                           # For computing accuracy metric
 import numpy as np                        # For numerical operations
-
+import torch
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"Using device: {device}")
 # === Step 1: Load the IMDB Dataset ===
 # This dataset has 50,000 movie reviews labeled as "positive" or "negative"
 dataset = load_dataset("imdb")
@@ -45,7 +47,7 @@ def compute_metrics(eval_pred):
 # TrainingArguments defines how the model will train and evaluate
 training_args = TrainingArguments(
     output_dir="./results",                     # Where to save model checkpoints
-    evaluation_strategy="epoch",                # Evaluate at the end of every epoch
+    eval_strategy="epoch",                # Evaluate at the end of every epoch
     per_device_train_batch_size=8,              # Batch size for training
     per_device_eval_batch_size=8,               # Batch size for evaluation
     num_train_epochs=2,                         # Total training epochs
@@ -55,7 +57,7 @@ training_args = TrainingArguments(
 # === Step 6: Create Trainer Instance ===
 # Trainer is Hugging Face’s high-level API to train models easily
 trainer = Trainer(
-    model=model,                                # The model to train
+    model=model.to(device),                     # The model to train (move model to GPU if available)
     args=training_args,                         # Training configurations
     train_dataset=tokenized_train,              # Training data
     eval_dataset=tokenized_test,                # Evaluation data
