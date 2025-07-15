@@ -1,21 +1,25 @@
-@"
-# Python
-__pycache__/
-*.py[cod]
-
 # Virtual environment
 .venv/
 
-# Model & results
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Checkpoints & training artifacts
 results/
 checkpoint/
 *.bin
 *.log
+*.ckpt
 
-# VSCode or JetBrains settings
+# Hugging Face cache (optional)
+~/.cache/huggingface/
+~/.huggingface/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# VSCode or JetBrains IDE
 .vscode/
 .idea/
-
-# OS
-.DS_Store
-"@ | Out-File -Encoding utf8 .gitignore

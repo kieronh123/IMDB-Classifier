@@ -67,3 +67,9 @@ trainer = Trainer(
 # === Step 7: Train the Model ===
 # This starts the training loop and saves the model in the output directory
 trainer.train()
+
+# Save full model and tokenizer to a new export folder
+export_dir = "./exported_model"
+tokenizer.save_pretrained(export_dir)
+model.save_pretrained(export_dir)
+
