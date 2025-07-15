@@ -2,6 +2,10 @@
 
 A fine-tuned DistilBERT model trained on the IMDB movie review dataset for binary sentiment classification.
 
+## Hosted Model
+https://huggingface.co/kieronh123/imdb-sentiment-model
+
+
 ---
 
 ## Screenshots
