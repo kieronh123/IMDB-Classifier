@@ -1,0 +1,21 @@
+@"
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+
+# Model & results
+results/
+checkpoint/
+*.bin
+*.log
+
+# VSCode or JetBrains settings
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+"@ | Out-File -Encoding utf8 .gitignore
