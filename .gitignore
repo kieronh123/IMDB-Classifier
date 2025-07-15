@@ -24,4 +24,4 @@ Thumbs.db
 .vscode/
 .idea/
 
-.exported_model/*.safetensors
+exported_model/*.safetensors
