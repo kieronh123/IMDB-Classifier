@@ -9,7 +9,7 @@ https://huggingface.co/khushon123/imdb-sentiment-model
 ---
 
 
-### Gradio Web App
+## Gradio Web App
 https://huggingface.co/spaces/Khushon123/imdb-sentiment-app
 
 ![Gradio UI Screenshot](assets/gradio_screenshot.png)
