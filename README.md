@@ -14,6 +14,18 @@ cd hf-imdb-sentiment-classifier
 # Create and activate a virtual environment (Windows / PowerShell)
 python -m venv .venv
 .venv\Scripts\Activate
+## ⚙️ PyTorch Installation (Required)
+
+This project uses PyTorch, but it is **not included in `requirements.txt`** because the install differs by system.
+
+Please install the correct version for your system using the official PyTorch site:
+
+👉 https://pytorch.org/get-started/locally/
+
+For most users (Windows + NVIDIA GPU):
+
+```powershell
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 
 # Install dependencies
 pip install -r requirements.txt
