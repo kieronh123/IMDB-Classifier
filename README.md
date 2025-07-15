@@ -3,7 +3,7 @@
 A fine-tuned DistilBERT model trained on the IMDB movie review dataset for binary sentiment classification.
 
 ## Hosted Model
-https://huggingface.co/kieronh123/imdb-sentiment-model
+https://huggingface.co/khushon123/imdb-sentiment-model
 
 
 ---
@@ -11,6 +11,7 @@ https://huggingface.co/kieronh123/imdb-sentiment-model
 ## Screenshots
 
 ### Gradio Web App
+https://huggingface.co/spaces/Khushon123/imdb-sentiment-app
 
 ![Gradio UI Screenshot](assets/gradio_screenshot.png)
 
