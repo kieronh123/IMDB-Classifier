@@ -1,18 +1,18 @@
-# 🎬 IMDB Sentiment Classifier (DistilBERT)
+# IMDB Sentiment Classifier (DistilBERT)
 
-A fine-tuned [DistilBERT](https://huggingface.co/distilbert-base-uncased) model trained on the IMDB movie review dataset for binary sentiment classification.
+A fine-tuned DistilBERT model trained on the IMDB movie review dataset for binary sentiment classification.
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
-### 🧪 Gradio Web App
+### Gradio Web App
 
 ![Gradio UI Screenshot](assets/gradio_screenshot.png)
 
 ---
 
-## 📊 Metrics & Performance
+## Metrics & Performance
 
 | Metric        | Value        |
 |---------------|--------------|
@@ -21,13 +21,13 @@ A fine-tuned [DistilBERT](https://huggingface.co/distilbert-base-uncased) model 
 | Training Time  | ~3 minutes (RTX 4080 GPU) |
 | Dataset Size   | 2000 training / 500 test samples |
 
-### 📈 Accuracy Over Epochs
+### Accuracy Over Epochs
 
 ![Accuracy Plot](assets/accuracy_plot.png)
 
 ---
 
-## ✨ Sample Predictions
+## Sample Predictions
 
 | Review Text                                  | Predicted Label | Confidence |
 |----------------------------------------------|------------------|------------|
@@ -37,9 +37,9 @@ A fine-tuned [DistilBERT](https://huggingface.co/distilbert-base-uncased) model 
 
 ---
 
-## 🚀 Usage
+## Usage
 
-### 🔧 Local Inference
+### Local Inference
 
 ```python
 from transformers import pipeline
@@ -48,7 +48,7 @@ classifier = pipeline("sentiment-analysis", model="./exported_model")
 print(classifier("This film was unexpectedly great!"))
 ```
 
-### 🌐 Gradio App
+### Gradio App
 
 ```bash
 python app.py
@@ -58,22 +58,22 @@ Runs an interactive browser-based sentiment classifier.
 
 ---
 
-## 🧠 Model Details
+## Model Details
 
-- **Base Model**: distilbert-base-uncased
-- **Fine-tuned On**: IMDB movie reviews (subset of 2,000 train + 500 test)
-- **Trained Using**: Hugging Face Transformers, PyTorch
-- **Hardware**: RTX 4080 Laptop GPU
-- **Training Time**: ~3 minutes
-
----
-
-## 📦 Exported Model
-
-Weights and tokenizer saved in `exported_model/` directory. You can also upload this to the [Hugging Face Hub](https://huggingface.co/) for cloud deployment.
+- Base Model: distilbert-base-uncased
+- Fine-tuned On: IMDB movie reviews (subset of 2,000 train + 500 test)
+- Trained Using: Hugging Face Transformers, PyTorch
+- Hardware: RTX 4080 Laptop GPU
+- Training Time: ~3 minutes
 
 ---
 
-## 📄 License
+## Exported Model
+
+Weights and tokenizer saved in `exported_model/` directory. You can also upload this to the Hugging Face Hub for cloud deployment.
+
+---
+
+## License
 
 MIT License

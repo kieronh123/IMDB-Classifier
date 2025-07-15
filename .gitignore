@@ -19,3 +19,6 @@ checkpoint/
 .DS_Store
 .vscode/
 .idea/
+
+.gradio/
+flagged/
