@@ -19,6 +19,10 @@ checkpoint/
 .DS_Store
 .vscode/
 .idea/
-
-.gradio/
+# --- Gradio -----------------------------------------------------------------
 flagged/
+gradio_cached_examples/
+.gradio/
+
+
+token.txt
